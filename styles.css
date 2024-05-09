@@ -1,43 +1,78 @@
 body {
-  background-color: #011f3f;
+  background-color: black;
+  text-align: center;
 }
 
-.title {
-  color: #fef2bf;
-  text-align: center;
-  font-weight: bold;
+.title,
+.score,
+.quit {
   font-family: "Press Start 2P", cursive;
   font-size: 3rem;
-  margin: 1%;
+  margin: 5%;
+  color: white;
+}
+
+.quit {
+  cursor: pointer;
 }
 
 .sectionCube {
-    display: block;
-    width: 50%;
-    margin: auto;
+  display: block;
+  width: 30%;
+  margin: auto;
 }
 
 .btn {
+  margin: -5px;
   display: inline-block;
-  margin: 25px;
-  width: 200px;
-  height: 200px;
-  border: 10px solid black;
-  border-radius: 25%;
+  height: 20vh; /* Используем относительные единицы */
+  width: 20vh;
+  border: 10px outset grey; /* Уменьшаем толщину границы */
+  cursor: pointer;
+}
+
+.btn:hover,
+.quit:hover {
+  filter: brightness(0.8);
+}
+
+.game-over {
+  background-color: rgba(
+    255,
+    0,
+    0,
+    0.8
+  ); /* Используем rgba для определения цвета с прозрачностью */
 }
 
 #green {
   background-color: #008000;
+  border-top-left-radius: 100%;
 }
 
 #red {
   background-color: #ff0000;
+  border-top-right-radius: 100%;
 }
 
 #yellow {
   background-color: #ffff00;
+  border-bottom-left-radius: 100%;
 }
 
 #blue {
   background-color: #0000ff;
+  border-bottom-right-radius: 100%;
+}
+
+@media screen and (max-width: 1583px) {
+  .sectionCube {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 1064px) {
+  .sectionCube {
+    width: 60%;
+  }
 }

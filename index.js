@@ -2,6 +2,7 @@
 let sequence = [];
 let currentSequence = [];
 let level = 0;
+let playingSequence = false;
 
 const audioFiles = {
   green: new Audio("./sounds/green.mp3"),
@@ -19,6 +20,7 @@ function calculateRandomElement() {
 
 // Функция проигрывания последовательности
 function playSequence(index = 0) {
+  playingSequence = true;
   if (index < sequence.length) {
     const key = sequence[index];
     $("#" + key).css("box-shadow", "inset 0 0 100px black");
@@ -27,6 +29,8 @@ function playSequence(index = 0) {
       $("#" + key).css("box-shadow", "");
       playSequence(index + 1); // Рекурсивный вызов для следующего элемента
     }, 1000);
+  } else {
+    playingSequence = false;
   }
 }
 
@@ -52,10 +56,9 @@ function gameOver() {
 
 // Обработчик клика на кнопки
 $(".btn").click(function () {
-  if (sequence.length > 0) {
+  if (!playingSequence && sequence.length > 0) {
     const clickedButtons = $(this).attr("id");
     currentSequence.push(clickedButtons);
-
     if (checkSequence()) {
       audioFiles[clickedButtons].play();
       $("#" + clickedButtons).css("box-shadow", "inset 0 0 100px black");

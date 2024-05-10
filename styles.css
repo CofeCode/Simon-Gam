@@ -18,7 +18,7 @@ body {
 
 .sectionCube {
   display: block;
-  width: 30%;
+  width: 50%;
   margin: auto;
 }
 
@@ -37,12 +37,7 @@ body {
 }
 
 .game-over {
-  background-color: rgba(
-    255,
-    0,
-    0,
-    0.8
-  ); /* Используем rgba для определения цвета с прозрачностью */
+  background-color: red;
 }
 
 #green {
@@ -65,14 +60,3 @@ body {
   border-bottom-right-radius: 100%;
 }
 
-@media screen and (max-width: 1583px) {
-  .sectionCube {
-    width: 45%;
-  }
-}
-
-@media screen and (max-width: 1064px) {
-  .sectionCube {
-    width: 60%;
-  }
-}

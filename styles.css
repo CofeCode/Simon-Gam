@@ -23,7 +23,7 @@ body {
 }
 
 .btn {
-  margin: -5px;
+  margin: -1px;
   display: inline-block;
   height: 20vh; /* Используем относительные единицы */
   width: 20vh;
